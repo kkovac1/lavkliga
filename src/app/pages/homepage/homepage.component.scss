@@ -1,0 +1,87 @@
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+  
+.transparent {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.8799894957983193) 50%, rgba(0,0,0,0.6138830532212884) 100%);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+  height: 100vh;
+
+  .content{
+    display: flex;
+    align-items: center;
+
+    h1{
+      -webkit-animation-name: example; /* Chrome, Safari, Opera */
+      -webkit-animation-duration: 15s; /* Chrome, Safari, Opera */
+      animation-name: example;
+      animation-duration: 5s;
+      animation-fill-mode: forwards;/*leaves properties at values from the end of animation*/
+  
+      /* Chrome, Safari, Opera */
+      @-webkit-keyframes example {
+        0%   {font-size: 0px;}
+        100% {font-size: 60px;}
+      }
+  
+      /* Standard syntax */
+      @keyframes example {
+        0%   {font-size: 0px;}
+        100% {font-size: 60px;}
+      }
+
+      font-size: 72px;
+      // background: -webkit-linear-gradient(#eee, #333);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+    }
+    
+  }
+}
+
+.border{
+  background: #293d08;
+  padding: 0px 32px;
+  transform: skewY(5deg);
+}
+
+
+.logo-list{
+  position: fixed;
+  width: 70%;
+  padding: 10px;
+  z-index: 1;
+  text-align: center;
+
+  img{
+    margin: 0 10px;
+    // width: 70px;
+    // height: 70px;
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin: 2rem 0;
+  color: white;
+  text-align: center;
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+}

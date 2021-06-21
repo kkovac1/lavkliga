@@ -1,0 +1,127 @@
+
+
+.navigation{
+    display: flex;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    // border-bottom: 2px solid;
+    background-color: #f5f5f5;
+    // clip-path: polygon(0 0, 100% 0, 100% 60%, 0 100%);
+    margin-bottom: 1rem;
+
+
+    img{
+        position: absolute;
+        left: 0;
+        height: 100px;
+        margin-left: 3rem;
+    }
+
+}
+
+.link-list{
+    display: flex;
+    margin: 0 0 1.4rem 0;
+    padding: 0;
+    list-style-type: none;
+    flex-wrap: wrap;
+
+    li{
+        a{
+            padding: 0.4rem 1.0rem;
+            margin: 0 0.5rem;
+            text-decoration: none;
+            color: #3c3535;
+            font-size: 20px;
+        }
+    }
+}
+
+
+.box {
+    // background-color: #a7a7a7;
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #2a323d;
+    border: 1px solid #3f4b5b;
+}
+
+.box-stretched {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img{
+        height: 100px;
+    }
+}
+
+.justify-container{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+
+
+
+
+.nav{
+    position: relative;
+    height: 100px;
+    background: #f5f5f5;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center; 
+    text-align:center;
+
+    img{
+        position: absolute;
+        z-index: 1;
+        left: 3rem;
+        top: 2.2rem;
+        height: 150px;
+    }
+
+    .nav-icons{
+        font-size: 22px;
+        height: 32px;
+        background: #293d08;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: white;
+        padding-right: 3rem;
+    
+        fa-icon{
+            margin: 0 5px
+        }
+
+        a{
+            color: white;
+        }
+    }
+
+    ul{
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li{
+            a{
+                padding: 0.4rem 1.0rem;
+                margin: 0 0.5rem;
+                text-decoration: none;
+                color: #3c3535;
+                font-size: 20px;
+            }
+        }
+    }
+}

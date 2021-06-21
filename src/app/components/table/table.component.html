@@ -1,0 +1,24 @@
+<p-table [columns]="columns" [value]="data">
+    <ng-template pTemplate="header" let-columns >
+        <tr>
+            <th [style]="{'width': '1rem'}">
+                #
+            </th>
+            <th [ngStyle]="{'width': col.columnDef == 'team' ? '300px' : '50px'}" *ngFor="let col of columns">
+                
+                {{col.header}}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns" let-i="rowIndex">
+        <tr>
+            <td>
+                {{ i + 1 }}
+            </td>
+            <td *ngFor="let col of columns">
+                <img *ngIf="col.columnDef == 'team'" src="../../../assets/lavkliga-logos/{{rowData.image}}.png" width="32" style="vertical-align: middle" />
+                {{ col.cell(rowData) }}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
