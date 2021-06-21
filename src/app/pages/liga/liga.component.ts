@@ -77,7 +77,7 @@ export class LigaComponent implements OnInit {
     this.items = [
       { label: 'Home', icon: 'pi pi-fw pi-home', routerLink: ["/homepage"] },
       { label: 'Liga', icon: 'pi pi-fw pi-calendar', routerLink: ["/liga"], routerLinkActiveOptions: { exact: true }, command: (event) => console.log(event) },
-      { label: 'O Ligi', icon: 'pi pi-fw pi-pencil', routerLink: ["/info"], routerLinkActiveOptions: {exact: true} }
+      { label: 'O Ligi', icon: 'pi pi-fw pi-pencil', routerLink: ["/info"], routerLinkActiveOptions: { exact: true } }
     ];
 
     this.fireService.getTeams().subscribe((res: Team[]) => {

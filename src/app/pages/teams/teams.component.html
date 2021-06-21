@@ -1,0 +1,21 @@
+
+<!-- <div style="margin: 0 auto; width: 80rem;">
+    <div *ngFor="let team of data">
+        <div>
+            <img src="../../../assets/lavkliga-logos/{{team.image}}.png" width="100" style="vertical-align: middle" />
+            {{ team.team }}
+        </div>
+    </div>
+</div> -->
+
+<div style="margin: 0 auto; width: 80rem; background-color: #293d08;" class="p-grid">
+    <div *ngFor="let team of data" class="p-col-4">
+        <div (click)="test(team)" style="cursor: pointer;" class="box">
+            <img src="../../../assets/lavkliga-logos/{{team.image}}.png" width="150" height="100" style="vertical-align: middle" />
+            <div style="color: white">
+
+                {{ team.team }}
+            </div>
+        </div>
+    </div>
+</div>
