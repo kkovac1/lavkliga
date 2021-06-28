@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Team } from 'src/app/components/table/models/Team';
+import { ITeam } from 'src/app/components/table/models/ITeam';
 import { FireService } from 'src/app/services/fire.service';
 
 @Component({
@@ -9,11 +9,11 @@ import { FireService } from 'src/app/services/fire.service';
 })
 export class TeamsComponent implements OnInit {
 
-  data: Team[] = [];
+  data: ITeam[] = [];
   constructor(public fireService: FireService) { }
 
   ngOnInit(): void {
-    this.fireService.getTeams().subscribe((res: Team[]) => {
+    this.fireService.getTeams().subscribe((res: ITeam[]) => {
       this.data = res;
       this.data.sort((a, b) => {
         return b.pts - a.pts;
@@ -22,7 +22,7 @@ export class TeamsComponent implements OnInit {
     
   }
 
-  test(team: Team){
+  test(team: ITeam){
     this.fireService.getPlayersByTeamID(team.id).subscribe( res => {
       console.log(res);
     });

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
-import { Team } from 'src/app/components/table/models/Team';
+import { ITeam } from 'src/app/components/table/models/ITeam';
 import { FireService } from 'src/app/services/fire.service';
 
 @Component({
@@ -11,13 +11,13 @@ import { FireService } from 'src/app/services/fire.service';
 export class LigaComponent implements OnInit {
 
 
-  data: Team[] = [];
+  data: ITeam[] = [];
   columns = [
     // {columnDef: 'position', header: '#', cell: (row: Tablica) => `${row.position}`},
-    {columnDef: 'team', header: 'T', cell: (row: Team) => `${row.team}`},
-    {columnDef: 'game', header: 'U', cell: (row: Team) => `${row.game}`},
-    {columnDef: 'goalDifference', header: 'GR', cell: (row: Team) => `${row.goalDifference}`},
-    {columnDef: 'pts', header: 'B', cell: (row: Team) => `${row.pts}`},
+    {columnDef: 'team', header: 'T', cell: (row: ITeam) => `${row.team}`},
+    {columnDef: 'game', header: 'U', cell: (row: ITeam) => `${row.game}`},
+    {columnDef: 'goalDifference', header: 'GR', cell: (row: ITeam) => `${row.goalDifference}`},
+    {columnDef: 'pts', header: 'B', cell: (row: ITeam) => `${row.pts}`},
   ];
 
   items: MenuItem[];
@@ -80,7 +80,7 @@ export class LigaComponent implements OnInit {
       { label: 'O Ligi', icon: 'pi pi-fw pi-pencil', routerLink: ["/info"], routerLinkActiveOptions: { exact: true } }
     ];
 
-    this.fireService.getTeams().subscribe((res: Team[]) => {
+    this.fireService.getTeams().subscribe((res: ITeam[]) => {
       this.data = res;
       this.data.sort((a, b) => {
         return b.pts - a.pts;

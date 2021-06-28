@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
-import { Team } from './models/Team';
+import { ITeam } from './models/ITeam';
 import { AngularFireDatabase, AngularFireList, AngularFireObject } from '@angular/fire/database';
-import { Player } from './models/Player';
+import { IPlayer } from './models/IPlayer';
 import { FireService } from 'src/app/services/fire.service';
 
 @Component({
@@ -13,26 +13,26 @@ import { FireService } from 'src/app/services/fire.service';
 })
 export class TableComponent implements OnInit {
 
-  data: Team[] = [];
+  data: ITeam[] = [];
   columns = [
     // {columnDef: 'position', header: '#', cell: (row: Tablica) => `${row.position}`},
-    {columnDef: 'team', header: 'Tim', cell: (row: Team) => `${row.team}`},
-    {columnDef: 'game', header: 'Utakmice', cell: (row: Team) => `${row.game}`},
-    {columnDef: 'win', header: 'Pobjeda', cell: (row: Team) => `${row.win}`},
-    {columnDef: 'draw', header: 'Neriješeno', cell: (row: Team) => `${row.draw}`},
-    {columnDef: 'lose', header: 'Izgubljeno', cell: (row: Team) => `${row.lose}`},
-    {columnDef: 'goalsScored', header: 'G+', cell: (row: Team) => `${row.goalsScored}`},
-    {columnDef: 'goalsConceded', header: 'G-', cell: (row: Team) => `${row.goalsConceded}`},
-    {columnDef: 'goalDifference', header: 'GR', cell: (row: Team) => `${row.goalDifference}`},
-    {columnDef: 'pts', header: 'Bodovi', cell: (row: Team) => `${row.pts}`},
+    {columnDef: 'team', header: 'Tim', cell: (row: ITeam) => `${row.team}`},
+    {columnDef: 'game', header: 'Utakmice', cell: (row: ITeam) => `${row.game}`},
+    {columnDef: 'win', header: 'Pobjeda', cell: (row: ITeam) => `${row.win}`},
+    {columnDef: 'draw', header: 'Neriješeno', cell: (row: ITeam) => `${row.draw}`},
+    {columnDef: 'lose', header: 'Izgubljeno', cell: (row: ITeam) => `${row.lose}`},
+    {columnDef: 'goalsScored', header: 'G+', cell: (row: ITeam) => `${row.goalsScored}`},
+    {columnDef: 'goalsConceded', header: 'G-', cell: (row: ITeam) => `${row.goalsConceded}`},
+    {columnDef: 'goalDifference', header: 'GR', cell: (row: ITeam) => `${row.goalDifference}`},
+    {columnDef: 'pts', header: 'Bodovi', cell: (row: ITeam) => `${row.pts}`},
   ];
 
-  items: Observable<Team[]>;
+  items: Observable<ITeam[]>;
 
 
   constructor(public fireService: FireService) {
 
-    fireService.getTeams().subscribe((res: Team[]) => {
+    fireService.getTeams().subscribe((res: ITeam[]) => {
       this.data = res;
       this.data.sort((a, b) => {
         return b.pts - a.pts;
