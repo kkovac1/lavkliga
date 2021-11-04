@@ -4,6 +4,9 @@
     padding-bottom: 1rem;
     border-radius: 4px;
     box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .flex-center-items{
@@ -14,5 +17,14 @@
 
 .team-container{
     width: 60%;
-    margin: 1rem;
+    margin: 1rem auto;
+
+    .info-container{
+        color:#293d08;
+        margin: 1rem;
+    }
+    
+    .img-container{
+        margin: 1rem;
+    }
 }

@@ -18,6 +18,7 @@ import { FireService } from './services/fire.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RankingComponent } from './pages/ranking/ranking.component';
 import { TeamsComponent } from './pages/teams/teams.component';
+import { ResultsComponent } from './pages/results/results.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { TeamsComponent } from './pages/teams/teams.component';
     NavbarComponent,
     TableComponent,
     RankingComponent,
-    TeamsComponent
+    TeamsComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

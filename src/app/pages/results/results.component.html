@@ -1,0 +1,8 @@
+<div *ngFor="let kolo of utakmice; index as i">
+    <span>{{ i+1 }}. Kolo</span>
+    <div *ngFor="let utakmica of kolo">
+        <span>{{ utakmica.black }}</span>
+        VS
+        <span>{{ utakmica.white }}</span>
+    </div>
+</div>

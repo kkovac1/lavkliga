@@ -14,15 +14,15 @@
     </div>
 </div> -->
 
-<div class="flex-center-items">
     <div class="team-container" *ngFor="let team of data">
         <div (click)="test(team)" style="cursor: pointer;" class="box">
-            <img *ngIf="team.image != 'vinkulja' && team.image != 'dzabalebarosi'" src="../../../assets/lavkliga-logos/{{team.image}}.png" width="110" height="100" style="vertical-align: middle"/>
-            <img *ngIf="team.image == 'vinkulja' || team.image == 'dzabalebarosi'" src="../../../assets/lavkliga-logos/{{team.image}}.png" width="180" height="100" style="vertical-align: middle"/>
-            <div style="color: white">
-    
-                {{ team.team }}
+            <div class="info-container">
+                <span>{{ team.team }}</span>
+                <!-- <span>Instagram: </span> -->
+            </div>
+            <div class="img-container">
+                <img *ngIf="team.image != 'vinkulja' && team.image != 'dzabalebarosi'" src="../../../assets/lavkliga-logos/{{team.image}}.png" width="110" height="100" style="vertical-align: middle"/>
+                <img *ngIf="team.image == 'vinkulja' || team.image == 'dzabalebarosi'" src="../../../assets/lavkliga-logos/{{team.image}}.png" width="180" height="100" style="vertical-align: middle"/>
             </div>
         </div>
     </div>
-</div>
