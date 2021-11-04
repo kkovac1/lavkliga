@@ -11,6 +11,7 @@ export class ResultsComponent implements OnInit {
 
   public teams: ITeam[] = [];
   public utakmice: any = [];
+  public kolo: any | null;
   constructor(
     public fireService: FireService
   ) {
@@ -59,7 +60,7 @@ export class ResultsComponent implements OnInit {
 
       // rotating the array
       playerIndexes.push(playerIndexes.shift());
-      tournamentPairings.push(roundPairings);
+      tournamentPairings.push({round, roundPairings});
     }
 
     return tournamentPairings;

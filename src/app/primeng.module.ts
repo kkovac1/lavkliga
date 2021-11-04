@@ -9,34 +9,37 @@ import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { ButtonModule } from 'primeng/button';
 import { GalleriaModule } from 'primeng/galleria';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        DividerModule,
-        TabMenuModule,
-        MenubarModule,
-        CardModule,
-        TableModule,
-        MenuModule,
-        ButtonModule,
-        GalleriaModule
-    ],
-    exports: [
-        BrowserModule,
-        DividerModule,
-        TabMenuModule,
-        MenubarModule,
-        CardModule,
-        TableModule,
-        MenuModule,
-        ButtonModule,
-        GalleriaModule
-      ],
-    providers: [
-    ]
-  })
+  imports: [
+    BrowserModule,
+    DividerModule,
+    TabMenuModule,
+    MenubarModule,
+    CardModule,
+    TableModule,
+    MenuModule,
+    ButtonModule,
+    GalleriaModule,
+    DropdownModule
+  ],
+  exports: [
+    BrowserModule,
+    DividerModule,
+    TabMenuModule,
+    MenubarModule,
+    CardModule,
+    TableModule,
+    MenuModule,
+    ButtonModule,
+    GalleriaModule,
+    DropdownModule
+  ],
+  providers: [
+  ]
+})
 
-  export class PrimengModule { }
+export class PrimengModule { }

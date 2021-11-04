@@ -1,0 +1,42 @@
+.choose-match {
+    width: 100%;
+    background-color: #293d08;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 150px;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    padding: 0 3rem;
+
+    h3 {
+        color: white;
+    }
+}
+
+.round-match-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
+
+    li.type1 {
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        border: 1px #c4c4c4;
+        border-style: solid none;
+        width: 100%;
+        justify-content: center;
+
+        .team {
+            display: flex;
+            flex: 1 100px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}

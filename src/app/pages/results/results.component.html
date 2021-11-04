@@ -1,8 +1,61 @@
-<div *ngFor="let kolo of utakmice; index as i">
+<!-- <div *ngFor="let kolo of utakmice; index as i">
     <span>{{ i+1 }}. Kolo</span>
     <div *ngFor="let utakmica of kolo">
         <span>{{ utakmica.team1.team }}</span>
         VS
         <span>{{ utakmica.team2.team }}</span>
     </div>
+</div> -->
+
+<div style="width: 100%">
+    <div class="choose-match">
+        <h3>Rezultati La Vk Lige 21./22.</h3>
+        <p-dropdown [options]="utakmice" [(ngModel)]="kolo" optionLabel="round" placeholder="Odaberi match">
+            <ng-template pTemplate="selectedItem">
+                <div *ngIf="kolo">
+                    <div>Matchday {{ kolo.round + 1 }}</div>
+                </div>
+            </ng-template>
+
+            <ng-template let-item pTemplate="item">
+                <div>
+                    Matchday {{ item.round + 1 }}
+                </div>
+            </ng-template>
+        </p-dropdown>
+    </div>
+
+    <ng-container *ngIf="kolo">
+        <ul class="round-match-list">
+            <li class="type1" *ngFor="let utakmica of kolo.roundPairings">
+                <span class="team">{{ utakmica.team1.team }} <img width="32" height="32"
+                        src="assets/lavkliga-logos/{{utakmica.team1.image}}.png" alt=""></span>
+                <span>VS</span>
+                <span class="team"><img width="32" height="32" src="assets/lavkliga-logos/{{utakmica.team2.image}}.png"
+                        alt=""> {{ utakmica.team2.team }} </span>
+            </li>
+        </ul>
+
+        <ul style="list-style: none; padding: 3rem;">
+            <li *ngFor="let utakmica of kolo.roundPairings">
+                <div class="p-grid">
+                    <div class="p-col-4">
+                        <span class="team">{{ utakmica.team1.team }} <img width="32" height="32"
+                            src="assets/lavkliga-logos/{{utakmica.team1.image}}.png" alt=""></span>
+                    </div>
+                    <div class="p-col-4">VS</div>
+                    <div class="p-col-4">
+                        <span class="team"><img width="32" height="32" src="assets/lavkliga-logos/{{utakmica.team2.image}}.png"
+                            alt=""> {{ utakmica.team2.team }} </span>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- <div *ngFor="let utakmica of kolo.roundPairings">
+            <span>{{ utakmica.team1.team }}</span>
+            VS
+            <span>{{ utakmica.team2.team }}</span>
+        </div> -->
+    </ng-container>
 </div>

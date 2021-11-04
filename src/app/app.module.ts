@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PrimengModule } from './primeng.module';
 import { environment } from 'src/environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
@@ -39,7 +39,8 @@ import { ResultsComponent } from './pages/results/results.component';
     AppRoutingModule,
     PrimengModule,
     BrowserAnimationsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [FireService],
   bootstrap: [AppComponent]
