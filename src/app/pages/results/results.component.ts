@@ -51,8 +51,8 @@ export class ResultsComponent implements OnInit {
       for (let i = 0; i < firstHalf.length; i++) {
         if (teamsCopy[firstHalf[i]] != null && teamsCopy[secondHalf[i]] != null) {
           roundPairings.push({
-            white: teamsCopy[firstHalf[i]].team,
-            black: teamsCopy[secondHalf[i]].team,
+            team1: teamsCopy[firstHalf[i]],
+            team2: teamsCopy[secondHalf[i]],
           });
         }
       }
